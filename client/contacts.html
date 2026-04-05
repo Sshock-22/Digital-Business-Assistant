@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Business Assistant — Контакты</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1f24;
+      color: #e5e7eb;
+    }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+  </style>
+</head>
+<body class="grid-bg min-h-screen">
+  <nav class="flex justify-between items-center px-10 py-6 max-w-7xl mx-auto">
+    <div class="text-2xl font-bold tracking-tighter flex items-center gap-2">
+      Digital<span class="text-gray-400">Business Assistant</span>
+    </div>
+
+    <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+      <a href="index.html" class="hover:text-lime-400 transition">Главная</a>
+      <a href="index.html#how" class="hover:text-lime-400 transition">Как работает</a>
+      <a href="index.html#analysis" class="hover:text-lime-400 transition">Анализ</a>
+      <a href="contacts.html" class="hover:text-lime-400 transition">Контакты</a>
+    </div>
+
+    <a href="index.html" class="px-6 py-2 border border-lime-400/50 text-lime-400 rounded-full hover:bg-lime-400/10 transition">
+      На главную
+    </a>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-10 py-16">
+    <div class="mb-10">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime-400/10 border border-lime-400/20 text-lime-300 text-sm">
+        Связь с командой
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mt-5">Контакты проекта</h1>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="p-6 rounded-3xl bg-gray-800/60 border border-gray-700">
+        <div class="text-lime-400 font-semibold mb-2">Telegram</div>
+        <div class="text-gray-300">@sshock_22</div>
+        <div class="text-sm text-gray-500 mt-2">Ссылка если возникли проблемы</div>
+      </div>
+
+      <div class="p-6 rounded-3xl bg-gray-800/60 border border-gray-700">
+        <div class="text-lime-400 font-semibold mb-2">VK</div>
+        <div class="text-gray-300">vk.com/your_page</div>
+        <div class="text-sm text-gray-500 mt-2">Страница команды или сообщества</div>
+      </div>
+
+      <div class="p-6 rounded-3xl bg-gray-800/60 border border-gray-700">
+        <div class="text-lime-400 font-semibold mb-2">Email</div>
+        <div class="text-gray-300">sshockvaleev22@gmail.com</div>
+        <div class="text-sm text-gray-500 mt-2">Для деловых вопросов и обратной связи</div>
+      </div>
+    </div>
+
+    <div class="mt-8 p-6 rounded-3xl bg-gray-800/60 border border-gray-700">
+      <h2 class="text-2xl font-bold mb-3">Создатели</h2>
+      <p class="text-gray-300 leading-8">
+        Валеев Александр - разработчик.</p>
+        <p class="text-gray-300 leading-8">
+        Беклемешев Макар - дизайнер.</p>
+        <p class="text-gray-300 leading-8">
+        Барсуков Роман - менеджер.</p>
+        <p class="text-gray-300 leading-8">
+        Правсолов Клим - помощник дизайнера.
+      </p>
+    </div>
+  </main>
+</body>
+</html>

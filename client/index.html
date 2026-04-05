@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Digital Business Assistant — Цифровой советник для бизнеса</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #1a1f24;
+color: #e5e7eb;
+}
+
+.grid-bg {
+background-image:
+linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+background-size: 40px 40px;
+}
+
+.neon-glow {
+box-shadow: 0 0 20px rgba(163, 230, 53, 0.4);
+}
+</style>
+</head>
+<body class="grid-bg min-h-screen">
+
+<nav class="flex justify-between items-center px-10 py-6 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter flex items-center gap-2">
+Digital<span class="text-gray-400">Business Assistant</span>
+</div>
+
+<div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+<a href="#home" class="hover:text-lime-400 transition">Главная</a>
+<a href="#how" class="hover:text-lime-400 transition">Как работает</a>
+<a href="#analysis" class="hover:text-lime-400 transition">Анализ</a>
+<a href="contacts.html" class="hover:text-lime-400 transition">Контакты</a>
+</div>
+
+<a href="contacts.html" class="px-6 py-2 border border-lime-400/50 text-lime-400 rounded-full hover:bg-lime-400/10 transition">
+Связаться
+</a>
+</nav>
+
+<main id="home" class="max-w-7xl mx-auto px-10 py-12 md:py-20">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-3/5 space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime-400/10 border border-lime-400/20 text-lime-300 text-sm">
+AI-анализ сайта и конкурентов
+</div>
+
+<h1 class="text-4xl md:text-5xl font-bold leading-tight">
+Цифровой советник для бизнеса, который объясняет, как расти в интернете
+</h1>
+
+<p class="text-gray-300 text-lg leading-8 max-w-2xl">
+Сервис анализирует сайт, ищет слабые места, сравнивает позиционирование с конкурентами и даёт понятные шаги, как выделиться и получить больше клиентов.
+</p>
+
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="text-lime-400 mt-1">✔</span>
+<p class="text-gray-300"><span class="font-semibold text-white">Анализирует</span> сайт, структуру и текст на странице</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="text-lime-400 mt-1">✔</span>
+<p class="text-gray-300"><span class="font-semibold text-white">Сравнивает</span> вас с конкурентами и находит точки отличия</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="text-lime-400 mt-1">✔</span>
+<p class="text-gray-300"><span class="font-semibold text-white">Выдаёт</span> короткие рекомендации без сложных терминов</p>
+</li>
+</ul>
+
+<div id="how" class="pt-4">
+<h3 class="text-xl font-semibold mb-4">Как это работает</h3>
+
+<div class="grid md:grid-cols-4 gap-4 text-sm">
+<div class="p-4 rounded-2xl bg-gray-800/60 border border-gray-700">
+<div class="text-lime-400 font-bold text-lg mb-2">1</div>
+Вводите ссылку на сайт
+</div>
+<div class="p-4 rounded-2xl bg-gray-800/60 border border-gray-700">
+<div class="text-lime-400 font-bold text-lg mb-2">2</div>
+Сервис забирает страницу и текст
+</div>
+<div class="p-4 rounded-2xl bg-gray-800/60 border border-gray-700">
+<div class="text-lime-400 font-bold text-lg mb-2">3</div>
+AI сравнивает вас с конкурентами
+</div>
+<div class="p-4 rounded-2xl bg-gray-800/60 border border-gray-700">
+<div class="text-lime-400 font-bold text-lg mb-2">4</div>
+Вы получаете советы, как выделиться
+</div>
+</div>
+</div>
+
+<div id="analysis" class="pt-4 max-w-2xl">
+<label class="block mb-2 text-gray-400" for="url">URL вашего сайта</label>
+<input
+id="url"
+type="url"
+class="w-full px-4 py-4 rounded-xl bg-white text-black outline-none focus:ring-2 focus:ring-lime-400"
+placeholder="https://example.com"
+autocomplete="off"
+/>
+
+<label class="block mt-4 mb-2 text-gray-400" for="competitors">Сайты конкурентов (необязательно, через запятую)</label>
+<textarea
+id="competitors"
+rows="3"
+class="w-full px-4 py-4 rounded-xl bg-white text-black outline-none focus:ring-2 focus:ring-lime-400"
+placeholder="https://competitor1.com, https://competitor2.com"
+></textarea>
+
+<button
+class="mt-4 bg-lime-400 text-black px-10 py-4 rounded-xl font-bold text-lg neon-glow hover:bg-lime-300 transition-all transform hover:scale-105"
+onclick="analyze()"
+>
+Начать бесплатный анализ
+</button>
+
+<div id="loading" class="hidden mt-5 text-gray-300 animate-pulse">
+AI анализирует сайт...
+</div>
+
+<div id="error" class="hidden mt-5 text-red-400"></div>
+</div>
+</div>
+
+<div class="md:w-2/5 mt-10 md:mt-0 flex justify-center relative">
+<div class="w-72 h-72 bg-lime-400/10 rounded-full blur-3xl absolute opacity-20"></div>
+
+<div class="relative border border-gray-700 p-8 rounded-3xl bg-gray-800/40 backdrop-blur-sm shadow-2xl w-full max-w-sm">
+<div class="flex flex-col gap-4">
+<div class="h-2 w-24 bg-gray-600 rounded"></div>
+<div class="h-8 w-48 bg-gray-700 rounded"></div>
+
+<div class="grid grid-cols-3 gap-2">
+<div class="h-16 bg-lime-400/20 rounded-lg border border-lime-400/30"></div>
+<div class="h-16 bg-gray-700 rounded-lg"></div>
+<div class="h-16 bg-gray-700 rounded-lg"></div>
+</div>
+
+<div class="h-2 w-full bg-gray-600 rounded"></div>
+<div class="h-2 w-2/3 bg-gray-600 rounded"></div>
+</div>
+
+<div class="mt-6 text-center text-xs text-gray-500 uppercase tracking-widest">
+AI аналитика запущена
+</div>
+</div>
+</div>
+</div>
+
+<section id="result" class="hidden mt-20 space-y-4" aria-live="polite">
+<div class="grid md:grid-cols-4 gap-4">
+<div class="p-5 rounded-2xl bg-gray-800/60 border border-gray-700">
+<div class="text-sm text-gray-400">Оценка</div>
+<div id="score" class="text-4xl font-extrabold text-lime-400 mt-2">—</div>
+</div>
+
+<div class="p-5 rounded-2xl bg-gray-800/60 border border-gray-700 md:col-span-3">
+<div class="text-sm text-gray-400">Краткий вывод</div>
+<div id="summary" class="mt-2 text-gray-200 leading-7">Здесь появится результат анализа.</div>
+</div>
+</div>
+
+<div class="grid md:grid-cols-2 gap-4">
+<div class="p-5 rounded-2xl bg-gray-800/60 border border-gray-700">
+<h3 class="text-xl font-bold mb-3">Проблемы</h3>
+<ul id="problems" class="space-y-2 text-gray-300 list-disc pl-5"></ul>
+</div>
+
+<div class="p-5 rounded-2xl bg-gray-800/60 border border-gray-700">
+<h3 class="text-xl font-bold mb-3">Рекомендации</h3>
+<ul id="recommendations" class="space-y-2 text-gray-300 list-disc pl-5"></ul>
+</div>
+</div>
+
+<div class="grid md:grid-cols-2 gap-4">
+<div class="p-5 rounded-2xl bg-gray-800/60 border border-gray-700">
+<h3 class="text-xl font-bold mb-3">Как выделиться среди конкурентов</h3>
+<div id="competitorSummary" class="text-gray-300 leading-7"></div>
+</div>
+
+<div class="p-5 rounded-2xl bg-gray-800/60 border border-gray-700">
+<h3 class="text-xl font-bold mb-3">Идеи дифференциации</h3>
+<ul id="differentiationIdeas" class="space-y-2 text-gray-300 list-disc pl-5"></ul>
+</div>
+</div>
+
+<div class="p-5 rounded-2xl bg-gray-800/60 border border-gray-700">
+<h3 class="text-xl font-bold mb-3">Быстрые шаги</h3>
+<ul id="quickWins" class="space-y-2 text-gray-300 list-disc pl-5"></ul>
+</div>
+
+<div class="p-5 rounded-2xl bg-gray-800/60 border border-gray-700">
+<h3 class="text-xl font-bold mb-3">Что найдено на странице</h3>
+<p class="text-gray-300"><span class="text-gray-400">Заголовок:</span> <span id="pageTitle">—</span></p>
+<p class="text-gray-300 mt-2"><span class="text-gray-400">Описание:</span> <span id="pageDescription">—</span></p>
+</div>
+</section>
+</main>
+
+<footer id="contact" class="max-w-7xl mx-auto px-10 py-10 text-sm text-gray-500">
+Digital Business Assistant — MVP для демонстрации анализа сайтов с помощью AI.
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>
